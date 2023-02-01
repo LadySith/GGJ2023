@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
+    public static event EventHandler OnStartPlayingMusic;
     public static GameManager instance;
     public AudioSource theMusic;
     public bool startPlaying;
@@ -17,9 +19,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI scoreMultiplierText;
 
+    private float currentTime = 0;
+    private float clipLength = 0;
+
     private void Awake()
     {
         instance = this;
+        clipLength = theMusic.clip.length;
     }
     // Start is called before the first frame update
     void Start()
@@ -37,8 +43,19 @@ public class GameManager : MonoBehaviour
                 startPlaying = true;
                 theBs.hasStarted = true;
                 theMusic.Play();
+                OnStartPlayingMusic?.Invoke(this, EventArgs.Empty);
             }
         }
+        else
+        {
+            currentTime += Time.deltaTime;
+            if(currentTime>0 && currentTime>clipLength)
+            {
+                currentTime = 0;
+                OnStartPlayingMusic?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
     }
 
 

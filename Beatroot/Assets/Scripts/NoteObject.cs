@@ -10,16 +10,20 @@ public class NoteObject : MonoBehaviour
 
     public KeyCode keyToPress;
 
+    [Header("For player")]
+    public bool isPlayerOne = true;
+    public KeyCode playerOneKeyCode;
+    public KeyCode playerTwoKeyCode;
     // Start is called before the first frame update
     void Start()
     {
-        
+        keyToPress = isPlayerOne?playerOneKeyCode:playerTwoKeyCode;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown( keyToPress))
         {
             if (canBePressed)
             {
