@@ -5,8 +5,8 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     private SpriteRenderer rend;
-    public Color defaultColor;
-    public Color pressedColor;
+    public Sprite defaultImage;
+    public Sprite pressedImage;
 
     public KeyCode keyToPress;
 
@@ -14,7 +14,8 @@ public class ButtonController : MonoBehaviour
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        rend.color = defaultColor;
+        rend.sprite = defaultImage;
+        rend.size = rend.size / 2.0f;
     }
 
     // Update is called once per frame
@@ -22,12 +23,14 @@ public class ButtonController : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress))
         {
-            rend.color = pressedColor;
+            rend.sprite = pressedImage;
+            rend.size = rend.size / 2.0f;
         }
 
         if (Input.GetKeyUp(keyToPress))
         {
-            rend.color = defaultColor;
+            rend.sprite = defaultImage;
+            rend.size = rend.size / 2.0f;
         }
     }
 }
