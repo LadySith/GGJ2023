@@ -9,6 +9,7 @@ public class NoteObject : MonoBehaviour
     public bool canBePressed;
 
     public KeyCode keyToPress;
+    bool destroying = false;
 
     [Header("For player")]
     public bool isPlayerOne = true;
@@ -28,6 +29,7 @@ public class NoteObject : MonoBehaviour
             if (canBePressed)
             {
                 GameManager.instance.Hit();
+                destroying = true;
                 gameObject.SetActive(false);
 
             }
@@ -45,7 +47,7 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Activator")
+        if (other.tag == "Activator" && destroying == false)
         {
             GameManager.instance.Missed();
             canBePressed = false;

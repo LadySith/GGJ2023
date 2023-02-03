@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using MoreMountains.Feedbacks;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     private float currentTime = 0;
     private float clipLength = 0;
+    [Header("Feedback")]
+    public MMF_Player rightNoteFeedback;
+    public MMF_Player wrongNoteFeedback;
 
     private void Awake()
     {
@@ -63,10 +67,13 @@ public class GameManager : MonoBehaviour
     {
         currentScore += 100;
         scoreText.SetText($"Score: {currentScore}");
+        rightNoteFeedback?.PlayFeedbacks();
+        print("yes");
     }
 
     public void Missed()
     {
+        wrongNoteFeedback?.PlayFeedbacks();
         print("miss");
     }
 }
