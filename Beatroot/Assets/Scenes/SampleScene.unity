@@ -446,6 +446,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82116212}
   m_CullTransparentMesh: 1
+--- !u!1 &146499589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146499591}
+  - component: {fileID: 146499590}
+  m_Layer: 0
+  m_Name: BeatDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &146499590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146499589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3480e8482207fad41ae89d7b2f1e5621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1253433110}
+  threshold: 0.5
+  updateInterval: 0.05
+--- !u!4 &146499591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146499589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.26627964, y: -1.2205057, z: -9.9831}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179021888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,7 +2843,6 @@ MonoBehaviour:
   - rid: 3343828250715226117
   - rid: 3343828250715226118
   - rid: 3343828250715226119
-  - rid: 3343828250715226120
   - rid: 3343828250715226121
   - rid: 3343828264058093568
   KeepPlayModeChanges: 0
@@ -3200,47 +3246,6 @@ MonoBehaviour:
         RemapIntensityZero: 0
         RemapIntensityOne: 1
         RelativeIntensity: 0
-    - rid: 3343828250715226120
-      type: {class: MMF_TimescaleModifier, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
-      data:
-        Active: 1
-        UniqueID: 2126656445
-        Label: Timescale Modifier
-        Channel: 0
-        Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
-        Timing:
-          TimescaleMode: 0
-          ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
-          InitialDelay: 0
-          CooldownDuration: 0
-          InterruptsOnStop: 1
-          NumberOfRepeats: 0
-          RepeatForever: 0
-          DelayBetweenRepeats: 1
-          MMFeedbacksDirectionCondition: 0
-          PlayDirection: 0
-          ConstantIntensity: 0
-          UseIntensityInterval: 0
-          IntensityIntervalMin: 0
-          IntensityIntervalMax: 0
-          Sequence: {fileID: 0}
-          TrackID: 0
-          Quantized: 0
-          TargetBPM: 120
-        RandomizeOutput: 0
-        RandomMultiplier: {x: 0.8, y: 1}
-        RandomizeDuration: 0
-        RandomDurationMultiplier: {x: 0.5, y: 2}
-        Owner: {fileID: 894377563}
-        DebugActive: 0
-        Mode: 0
-        TimeScale: 0.5
-        TimeScaleDuration: 0.2
-        TimeScaleLerp: 0
-        TimeScaleLerpSpeed: 1
-        ResetTimescaleOnStop: 0
     - rid: 3343828250715226121
       type: {class: MMF_ColorAdjustments_URP, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.URP}
       data:
@@ -4781,6 +4786,7 @@ GameObject:
   - component: {fileID: 1253433113}
   - component: {fileID: 1253433115}
   - component: {fileID: 1253433114}
+  - component: {fileID: 1253433116}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4798,7 +4804,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0f7bbc933e1ffd744bdb1ed6f37dca47, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98afdfb33d92dcd4fb877c3610f53836, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4981,6 +4987,7 @@ MonoBehaviour:
     hasSpawned: 0
   - secondItPlays: 7.5
     hasSpawned: 0
+  manualTimes: []
   spawnPredictTime: 1
   currentTime: 0
   arrowSpawns:
@@ -5067,6 +5074,29 @@ AudioDistortionFilter:
   m_GameObject: {fileID: 1253433109}
   m_Enabled: 1
   m_DistortionLevel: 0
+--- !u!114 &1253433116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253433109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad024e1399cc4e4b9c7c2273f60dd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pattern: 03000000020000000100000000000000000000000100000002000000030000000200000003000000020000000100000001000000020000000100000001000000030000000300000002000000030000000200000003000000020000000100000001000000020000000100000001000000030000000300000002000000030000000200000003000000020000000000000000000000020000000000000000000000030000000300000002000000010000000000000000000000000000000200000000000000000000000300000003000000020000000100000000000000
+  notes:
+  - note: 0
+    audioSource: {fileID: 0}
+  - note: 0
+    audioSource: {fileID: 0}
+  - note: 0
+    audioSource: {fileID: 0}
+  - note: 0
+    audioSource: {fileID: 0}
+  currentNote: 0
 --- !u!1 &1265457787
 GameObject:
   m_ObjectHideFlags: 0

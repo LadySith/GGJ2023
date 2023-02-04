@@ -7,6 +7,7 @@ public class NoteTiming : MonoBehaviour
 {
     public static NoteTiming instance;
     public List<NoteTime> times = new List<NoteTime>();
+    public List<NoteTime> manualTimes = new List<NoteTime>();
     public float spawnPredictTime = 2, currentTime;
     bool started = false;
 
@@ -28,6 +29,7 @@ public class NoteTiming : MonoBehaviour
         started = true;
         currentTime = 0;
         times.ForEach(x => x.hasSpawned = false);
+   
 
     }
     public void Start()
@@ -38,7 +40,13 @@ public class NoteTiming : MonoBehaviour
     }
     public void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            NoteTime ti = new NoteTime();
+            ti.secondItPlays = currentTime;
+            ti.hasSpawned = false;
+            manualTimes.Add(ti);
+        }
         if (started)
         {
             currentTime += Time.deltaTime;

@@ -107,13 +107,13 @@ public class GameManager : MonoBehaviour
             scoreTextPlayer2.SetText($"Score: {playerTwoScore}");
         }
         rightNoteFeedback?.PlayFeedbacks();
-        print("yes");
+        NotePlayer.instance.PlayNote();
     }
 
     public void Missed(int player = 1)
     {
         wrongNoteFeedback?.PlayFeedbacks();
-        print("miss");
+        NotePlayer.instance.MissNote();
     }
 
     public void EndGame()
