@@ -9,4 +9,15 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneID);
     }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
+        {
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
+    }
 }

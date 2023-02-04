@@ -26,9 +26,8 @@ public class MusicManager : MonoBehaviour
     {
         if (_instance == null)
         {
-            Debug.Log("Null");
-            //If I am the first instance, make me the Singleton
             _instance = this;
+            Play();
             DontDestroyOnLoad(this);
         }
         else
@@ -42,6 +41,12 @@ public class MusicManager : MonoBehaviour
         }
 
     }
+
+    public void Start()
+    {
+        if (!MusicManager.instance.menuMusic.isPlaying) MusicManager.instance.Play();
+    }
+
     public void Update()
     {
         if (this != _instance)
@@ -49,6 +54,7 @@ public class MusicManager : MonoBehaviour
             _instance = null;
         }
     }
+
     public void Play()
     {
         menuMusic.Play();
