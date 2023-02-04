@@ -20,4 +20,21 @@ public class ChangeScene : MonoBehaviour
             }
         }
     }
+
+    private void Start()
+    {
+        
+    }
+
+    public void load1Player()
+    {
+        GameManager.instance.hasPlayerTwo = false;
+        MoveToScene(0);
+    }
+
+    public void load2Player()
+    {
+        GameManager.instance.hasPlayerTwo = true;
+        MoveToScene(0);
+    }
 }
