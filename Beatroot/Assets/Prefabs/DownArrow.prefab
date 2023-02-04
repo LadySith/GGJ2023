@@ -116,6 +116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 274
-  isPlayerOne: 1
-  playerOneKeyCode: 274
-  playerTwoKeyCode: 0
+  isPlayerOne: 0
+  playerOneKeyCode: 115
+  playerTwoKeyCode: 274

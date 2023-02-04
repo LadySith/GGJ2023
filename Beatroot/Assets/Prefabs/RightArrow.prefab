@@ -117,5 +117,5 @@ MonoBehaviour:
   canBePressed: 0
   keyToPress: 275
   isPlayerOne: 1
-  playerOneKeyCode: 275
-  playerTwoKeyCode: 0
+  playerOneKeyCode: 100
+  playerTwoKeyCode: 275

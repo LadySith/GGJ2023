@@ -28,7 +28,7 @@ public class NoteObject : MonoBehaviour
         {
             if (canBePressed)
             {
-                GameManager.instance.Hit();
+                GameManager.instance.Hit(isPlayerOne?1:2);
                 destroying = true;
                 gameObject.SetActive(false);
 
@@ -49,7 +49,7 @@ public class NoteObject : MonoBehaviour
     {
         if (other.tag == "Activator" && destroying == false)
         {
-            GameManager.instance.Missed();
+            GameManager.instance.Missed(isPlayerOne ? 1 : 2);
             canBePressed = false;
         }
     }
