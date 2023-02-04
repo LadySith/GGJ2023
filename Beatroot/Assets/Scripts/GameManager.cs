@@ -38,9 +38,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        clipLength = theMusic.clip.length;
-        endScreen.SetActive(false);
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+            clipLength = theMusic.clip.length;
+            endScreen.SetActive(false);
+        }
     }
 
 
@@ -123,5 +130,18 @@ public class GameManager : MonoBehaviour
         playerTwoStats.SetActive(hasPlayerTwo);
         playeOneScroeState.SetText(currentScore.ToString());
         playerTwoScoreState.SetText(playerTwoScoreState.ToString());
+    }
+
+    public void setPlayers(int players)
+    {
+        if (players == 1)
+        {
+            hasPlayerTwo = false;
+        }
+
+        else
+        {
+            hasPlayerTwo = true;
+        }
     }
 }

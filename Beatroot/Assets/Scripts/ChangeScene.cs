@@ -28,13 +28,13 @@ public class ChangeScene : MonoBehaviour
 
     public void load1Player()
     {
-        GameManager.instance.hasPlayerTwo = false;
+        //set to 1 player
         MoveToScene(0);
     }
 
     public void load2Player()
     {
-        GameManager.instance.hasPlayerTwo = true;
+        //set to 2 players
         MoveToScene(0);
     }
 }
