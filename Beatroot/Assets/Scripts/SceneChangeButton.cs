@@ -25,4 +25,9 @@ public class SceneChangeButton : MonoBehaviour
     {
         ChangeScene.instance.load2Player();
     }
+
+    public void LoadMainMenu()
+    {
+        ChangeScene.instance.MoveToScene(0);
+    }
 }

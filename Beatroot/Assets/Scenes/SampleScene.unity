@@ -6006,7 +6006,7 @@ MonoBehaviour:
   startPlaying: 0
   hasPlayerTwo: 0
   theBs: {fileID: 54643999}
-  maxPlays: 2
+  maxPlays: 1
   current: 0
   currentScore: 0
   playerTwoScore: 0
@@ -7979,6 +7979,7 @@ GameObject:
   - component: {fileID: 1998570283}
   - component: {fileID: 1998570282}
   - component: {fileID: 1998570281}
+  - component: {fileID: 1998570284}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -8051,10 +8052,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2144411159}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: MoveToScene
-        m_Mode: 3
+      - m_Target: {fileID: 1998570284}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8101,6 +8102,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998570279}
   m_CullTransparentMesh: 1
+--- !u!114 &1998570284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998570279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff99bf1bd6e1a04b8e83f3fb811d37e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031026102
 GameObject:
   m_ObjectHideFlags: 0
