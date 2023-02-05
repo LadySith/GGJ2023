@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
     public GameObject playerOneStats, playerTwoStats;
     public TextMeshProUGUI playeOneScroeState, playerTwoScoreState;
 
+    [Header("Veggie crew")]
+    public GameObject veggies;
+    public GameObject veggiesp2;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -48,6 +52,8 @@ public class GameManager : MonoBehaviour
             clipLength = theMusic.clip.length;
             endScreen.SetActive(false);
         }
+
+        
     }
 
 
@@ -55,6 +61,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         hasPlayerTwo = ChangeScene.twoPlayerMode;
+        veggies.SetActive(!hasPlayerTwo);
+        veggiesp2.SetActive(hasPlayerTwo);
     }
 
     // Update is called once per frame

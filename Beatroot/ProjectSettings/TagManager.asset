@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Activator
   - MenuBGM
+  - Crew
   layers:
   - Default
   - TransparentFX
