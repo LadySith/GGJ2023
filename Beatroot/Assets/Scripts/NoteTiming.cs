@@ -10,7 +10,7 @@ public class NoteTiming : MonoBehaviour
     public List<NoteTime> manualTimes = new List<NoteTime>();
     public float spawnPredictTime = 2, currentTime;
     bool started = false;
-
+    
     [Header("Spawning info")]
 
     public List<Transform> arrowSpawns, playerTwoSpawns;
@@ -22,6 +22,12 @@ public class NoteTiming : MonoBehaviour
         instance = this;
         started = false;
         GameManager.OnStartPlayingMusic += GameManager_OnStartPlayingMusic;
+        GameManager.OnEndMusic += GameManager_OnEndMusic;
+    }
+
+    private void GameManager_OnEndMusic(object sender, System.EventArgs e)
+    {
+        started = false;
     }
 
     private void GameManager_OnStartPlayingMusic(object sender, System.EventArgs e)

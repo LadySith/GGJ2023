@@ -7,7 +7,7 @@ using MoreMountains.Feedbacks;
 
 public class GameManager : MonoBehaviour
 {
-    public static event EventHandler OnStartPlayingMusic;
+    public static event EventHandler OnStartPlayingMusic,OnEndMusic;
     public static GameManager instance;
     public AudioSource theMusic;
     public bool startPlaying;
@@ -106,12 +106,12 @@ public class GameManager : MonoBehaviour
         if (player == 1)
         {
 
-            scoreTextPlayer1.SetText($"Score: {currentScore}");
+            scoreTextPlayer1.SetText(currentScore.ToString());
         }
         else
         {
 
-            scoreTextPlayer2.SetText($"Score: {playerTwoScore}");
+            scoreTextPlayer2.SetText(playerTwoScore.ToString());
         }
         rightNoteFeedback?.PlayFeedbacks();
         NotePlayer.instance.PlayNote();
@@ -129,7 +129,8 @@ public class GameManager : MonoBehaviour
         playerOneStats.SetActive(true);
         playerTwoStats.SetActive(hasPlayerTwo);
         playeOneScroeState.SetText(currentScore.ToString());
-        playerTwoScoreState.SetText(playerTwoScoreState.ToString());
+        playerTwoScoreState.SetText(playerTwoScore.ToString());
+        OnEndMusic?.Invoke(this, EventArgs.Empty);
     }
 
     public void setPlayers(int players)

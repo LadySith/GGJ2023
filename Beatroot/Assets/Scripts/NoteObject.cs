@@ -15,10 +15,13 @@ public class NoteObject : MonoBehaviour
     public bool isPlayerOne = true;
     public KeyCode playerOneKeyCode;
     public KeyCode playerTwoKeyCode;
+    public Sprite playerTwoSprite;
     // Start is called before the first frame update
     void Start()
     {
         keyToPress = isPlayerOne?playerOneKeyCode:playerTwoKeyCode;
+  /*      if (isPlayerOne == false)
+            GetComponent<SpriteRenderer>().sprite = playerTwoSprite;*/
     }
 
     // Update is called once per frame

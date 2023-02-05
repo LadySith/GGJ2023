@@ -25,30 +25,18 @@ public class ChangeScene : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
-        {
-            if (Input.anyKeyDown)
-            {
-                SceneManager.LoadScene(1);
-            }
-        }
-    }
-
-    private void Start()
-    {
         
     }
 
     public void load1Player()
     {
         twoPlayerMode = false;
-        MoveToScene(0);
+        MoveToScene(1);
     }
 
     public void load2Player()
     {
         twoPlayerMode = true;
-        //set to 2 players
-        MoveToScene(0);
+        MoveToScene(1);
     }
 }
