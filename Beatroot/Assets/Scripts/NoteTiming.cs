@@ -29,18 +29,22 @@ public class NoteTiming : MonoBehaviour
         started = true;
         currentTime = 0;
         times.ForEach(x => x.hasSpawned = false);
-   
+
 
     }
     public void Start()
     {
 
-        playerTwoBoard.SetActive(GameManager.instance.hasPlayerTwo);
+        EnablePlayerTwo();
+    }
+    public void EnablePlayerTwo()
+    {
+        playerTwoBoard.SetActive(ChangeScene.twoPlayerMode);
 
     }
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             NoteTime ti = new NoteTime();
             ti.secondItPlays = currentTime;

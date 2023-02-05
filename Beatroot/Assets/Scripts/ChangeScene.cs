@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public static ChangeScene instance;
+    public static bool twoPlayerMode = false;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
     public void MoveToScene(int sceneID)
     {
         SceneManager.LoadScene(sceneID);
@@ -28,12 +41,13 @@ public class ChangeScene : MonoBehaviour
 
     public void load1Player()
     {
-        //set to 1 player
+        twoPlayerMode = false;
         MoveToScene(0);
     }
 
     public void load2Player()
     {
+        twoPlayerMode = true;
         //set to 2 players
         MoveToScene(0);
     }

@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        hasPlayerTwo = ChangeScene.twoPlayerMode;
     }
 
     // Update is called once per frame
