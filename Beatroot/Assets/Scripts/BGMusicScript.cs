@@ -27,7 +27,7 @@ public class BGMusicScript : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(1) && instance.GetComponent<AudioSource>().isPlaying)
         {
             instance.GetComponent<AudioSource>().Stop();
         }
