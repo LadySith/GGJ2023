@@ -25,6 +25,7 @@ public class NotePlayer : MonoBehaviour
     }
     public void PlayNote()
     {
+        return;
         notes.First(x => x.note == pattern[currentNote]).audioSource.Play();
 
         currentNote += 1;
@@ -33,7 +34,7 @@ public class NotePlayer : MonoBehaviour
 
     public void MissNote()
     {
-
+        return;
         currentNote += 1;
         currentNote = currentNote % notes.Count;
     }

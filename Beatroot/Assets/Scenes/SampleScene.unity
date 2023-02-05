@@ -346,7 +346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 272.3255, y: 47.674}
+  m_AnchoredPosition: {x: 272.3255, y: 47.67401}
   m_SizeDelta: {x: 544.6597, y: 95.346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82116214
@@ -533,6 +533,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1738711546}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1253433110}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1142,8 +1154,8 @@ Canvas:
   m_GameObject: {fileID: 355778601}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1152,7 +1164,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &355778605
 RectTransform:
@@ -2448,7 +2460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -341.2321, y: 47.674}
+  m_AnchoredPosition: {x: -341.23206, y: 47.67401}
   m_SizeDelta: {x: 682.4642, y: 95.347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614228243
@@ -3114,7 +3126,6 @@ GameObject:
   m_Component:
   - component: {fileID: 894377561}
   - component: {fileID: 894377563}
-  - component: {fileID: 894377562}
   m_Layer: 0
   m_Name: Wrong
   m_TagString: Untagged
@@ -3137,26 +3148,6 @@ Transform:
   m_Father: {fileID: 674652978}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &894377562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894377560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7de9ef06f04864391a928af29f4b46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NormalTimescale: 1
-  DefaultLerpSpeed: 1
-  DefaultLerpTimescale: 0
-  CurrentTimeScale: 1
-  TargetTimeScale: 1
-  LerpTimescale: 1
-  LerpSpeed: 0
-  TestButton: 0
 --- !u!114 &894377563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3212,9 +3203,9 @@ MonoBehaviour:
   - rid: 3343828250715226116
   - rid: 3343828250715226117
   - rid: 3343828250715226118
+  - rid: 3343828264058093568
   - rid: 3343828250715226119
   - rid: 3343828250715226121
-  - rid: 3343828264058093568
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
@@ -3932,7 +3923,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         RemapDistortionZero: 0
-        RemapDistortionOne: 0.5
+        RemapDistortionOne: 1
 --- !u!1 &900788448
 GameObject:
   m_ObjectHideFlags: 0
@@ -5565,7 +5556,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0f7bbc933e1ffd744bdb1ed6f37dca47, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98afdfb33d92dcd4fb877c3610f53836, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5722,19 +5713,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   times:
-  - secondItPlays: 1
-    hasSpawned: 0
-  - secondItPlays: 1.5
-    hasSpawned: 0
-  - secondItPlays: 2
-    hasSpawned: 0
-  - secondItPlays: 2.5
-    hasSpawned: 0
   - secondItPlays: 3
     hasSpawned: 0
-  - secondItPlays: 4
+  - secondItPlays: 3.5
     hasSpawned: 0
-  - secondItPlays: 4.5
+  - secondItPlays: 4
     hasSpawned: 0
   - secondItPlays: 5
     hasSpawned: 0
@@ -5742,14 +5725,156 @@ MonoBehaviour:
     hasSpawned: 0
   - secondItPlays: 6
     hasSpawned: 0
+  - secondItPlays: 6
+    hasSpawned: 0
   - secondItPlays: 6.5
     hasSpawned: 0
   - secondItPlays: 7
     hasSpawned: 0
-  - secondItPlays: 7.5
+  - secondItPlays: 7
+    hasSpawned: 0
+  - secondItPlays: 7
+    hasSpawned: 0
+  - secondItPlays: 9
+    hasSpawned: 0
+  - secondItPlays: 10
+    hasSpawned: 0
+  - secondItPlays: 11
+    hasSpawned: 0
+  - secondItPlays: 12
+    hasSpawned: 0
+  - secondItPlays: 13
+    hasSpawned: 0
+  - secondItPlays: 14
+    hasSpawned: 0
+  - secondItPlays: 14.5
+    hasSpawned: 0
+  - secondItPlays: 15
+    hasSpawned: 0
+  - secondItPlays: 16
+    hasSpawned: 0
+  - secondItPlays: 16.5
+    hasSpawned: 0
+  - secondItPlays: 16.5
+    hasSpawned: 0
+  - secondItPlays: 17
+    hasSpawned: 0
+  - secondItPlays: 18
+    hasSpawned: 0
+  - secondItPlays: 19
+    hasSpawned: 0
+  - secondItPlays: 21
+    hasSpawned: 0
+  - secondItPlays: 21
+    hasSpawned: 0
+  - secondItPlays: 21.5
+    hasSpawned: 0
+  - secondItPlays: 22
+    hasSpawned: 0
+  - secondItPlays: 23
+    hasSpawned: 0
+  - secondItPlays: 23.5
+    hasSpawned: 0
+  - secondItPlays: 23.5
+    hasSpawned: 0
+  - secondItPlays: 24
+    hasSpawned: 0
+  - secondItPlays: 25.5
+    hasSpawned: 0
+  - secondItPlays: 26
+    hasSpawned: 0
+  - secondItPlays: 27
+    hasSpawned: 0
+  - secondItPlays: 29
+    hasSpawned: 0
+  - secondItPlays: 29
+    hasSpawned: 0
+  - secondItPlays: 30
+    hasSpawned: 0
+  - secondItPlays: 31
+    hasSpawned: 0
+  - secondItPlays: 32
+    hasSpawned: 0
+  - secondItPlays: 32
+    hasSpawned: 0
+  - secondItPlays: 33
+    hasSpawned: 0
+  - secondItPlays: 34
+    hasSpawned: 0
+  - secondItPlays: 34.5
+    hasSpawned: 0
+  - secondItPlays: 37
+    hasSpawned: 0
+  - secondItPlays: 37
+    hasSpawned: 0
+  - secondItPlays: 38
+    hasSpawned: 0
+  - secondItPlays: 38.5
+    hasSpawned: 0
+  - secondItPlays: 39
+    hasSpawned: 0
+  - secondItPlays: 40
+    hasSpawned: 0
+  - secondItPlays: 41
+    hasSpawned: 0
+  - secondItPlays: 42
+    hasSpawned: 0
+  - secondItPlays: 42.5
+    hasSpawned: 0
+  - secondItPlays: 43
+    hasSpawned: 0
+  - secondItPlays: 43
+    hasSpawned: 0
+  - secondItPlays: 44
+    hasSpawned: 0
+  - secondItPlays: 45
+    hasSpawned: 0
+  - secondItPlays: 46
+    hasSpawned: 0
+  - secondItPlays: 47
+    hasSpawned: 0
+  - secondItPlays: 48
+    hasSpawned: 0
+  - secondItPlays: 49
+    hasSpawned: 0
+  - secondItPlays: 50
+    hasSpawned: 0
+  - secondItPlays: 51
+    hasSpawned: 0
+  - secondItPlays: 51.5
+    hasSpawned: 0
+  - secondItPlays: 52
+    hasSpawned: 0
+  - secondItPlays: 52.5
+    hasSpawned: 0
+  - secondItPlays: 53
+    hasSpawned: 0
+  - secondItPlays: 53.5
+    hasSpawned: 0
+  - secondItPlays: 54
+    hasSpawned: 0
+  - secondItPlays: 55
+    hasSpawned: 0
+  - secondItPlays: 56
+    hasSpawned: 0
+  - secondItPlays: 57
+    hasSpawned: 0
+  - secondItPlays: 58
+    hasSpawned: 0
+  - secondItPlays: 59
+    hasSpawned: 0
+  - secondItPlays: 59
+    hasSpawned: 0
+  - secondItPlays: 59.5
+    hasSpawned: 0
+  - secondItPlays: 60
+    hasSpawned: 0
+  - secondItPlays: 61
+    hasSpawned: 0
+  - secondItPlays: 61.5
     hasSpawned: 0
   manualTimes: []
-  spawnPredictTime: 1
+  spawnPredictTime: 1.2
   currentTime: 0
   arrowSpawns:
   - {fileID: 1308551961}
@@ -5847,16 +5972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad024e1399cc4e4b9c7c2273f60dd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: 03000000020000000100000000000000000000000100000002000000030000000200000003000000020000000100000001000000020000000100000001000000030000000300000002000000030000000200000003000000020000000100000001000000020000000100000001000000030000000300000002000000030000000200000003000000020000000000000000000000020000000000000000000000030000000300000002000000010000000000000000000000000000000200000000000000000000000300000003000000020000000100000000000000
-  notes:
-  - note: 0
-    audioSource: {fileID: 1747155148}
-  - note: 1
-    audioSource: {fileID: 463859839}
-  - note: 2
-    audioSource: {fileID: 1003745492}
-  - note: 3
-    audioSource: {fileID: 1180062909}
+  pattern: 
+  notes: []
   currentNote: 0
 --- !u!1 &1265457787
 GameObject:
@@ -6750,6 +6867,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1738711546}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1253433110}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
